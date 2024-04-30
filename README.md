@@ -1,66 +1,21 @@
-## Foundry
+## ERC20 Foundry
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+# Deploy
 
-Foundry consists of:
+```bash
+PRIVATE_KEY="0xaaa"
+RPC_URL="https://hello.rpc.xyz/http"
+VERIFIER_URL="https://blockyscout.explorer.xyz/api"
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+forge create --verify src/TokenA.sol:Token \
+--private-key $PRIVATE_KEY \
+--rpc-url $RPC_URL \
+--verifier-url $VERIFIER_URL \
+--verifier blockscout
 
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
+forge create --verify src/TokenB.sol:Token \
+--private-key $PRIVATE_KEY \
+--rpc-url $RPC_URL \
+--verifier-url $VERIFIER_URL \
+--verifier blockscout
 ```
