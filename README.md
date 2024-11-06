@@ -19,3 +19,12 @@ forge create --verify src/TokenB.sol:Token \
 --verifier-url $VERIFIER_URL \
 --verifier blockscout
 ```
+
+# Verify
+
+```bash
+forge verify-contract 0xF9Cf4A16d26979b929Be7176bAc4e7084975FCB8 \
+src/TokenA.sol:Token \
+--verifier blockscout \
+--verifier-url https://vemp-testnet.explorer.caldera.xyz/api
+```
