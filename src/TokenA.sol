@@ -9,6 +9,6 @@ contract Token is ERC20{
     }
 
     function mint() public {
-        _mint(msg.sender, 10 ** 18);
+        _mint(msg.sender, 10 * 10 ** 18);
     }
 }
